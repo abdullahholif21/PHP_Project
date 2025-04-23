@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    
 </head>
 <body>
 <div class="container">
@@ -12,8 +13,8 @@
     <div class="row">
         <table class="table table-hover table-bordered table-sm ">
          <thead>
-               <tr>
-               <th>id</th>
+                <tr>
+                <th>id</th>
                 <th>name</th>
                 <th>address</th>
                 <th>tell</th>
@@ -40,8 +41,9 @@
                 <td><?php   echo $item["email"] ;  ?></td>
                 <td><?php   echo $item["reg_date"] ;  ?></td>
                 <td><?php   echo $item["username"] ;  ?></td>
-                <td> <a href="" class="btn btn-primary">edit</a>
-                <a href="" class="btn btn-danger">delete</a> </td>
+                <td> 
+                    <a href="remove-users.php?id=<?php   echo $item["id"] ;  ?>" class="btn btn-primary">edit</a>
+                <a href="remove-users.php?id=<?php   echo $item["id"] ;  ?>" class="btn btn-danger">delete</a> </td>
                </tr>
 
                <?php   }}?>
