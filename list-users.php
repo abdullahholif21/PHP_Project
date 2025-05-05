@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php   
+include_once("./include/head.php");
+include_once("./include/navbar.php");
+include_once("./include/sidebar.php");
+?>
+  <main id="main" class="main">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+<div class="pagetitle">
+  <h1>Dashboard</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active">Dashboard</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
 
-</head>
-
-<body>
-    <div class="container">
+<section class="section dashboard">
+<div class="container">
         <a href="register-user.php" class="btn btn-primary"> Regiser user</a>
         <div class="row">
             <table class="table table-hover table-bordered table-sm ">
@@ -28,6 +34,14 @@
                 </thead>
                 <tbody>
                     <?php
+                //  session_destroy();
+                
+                //  session_destroy();
+                //  unset($_SESSION["username"]);
+                 if(!isset($_SESSION["username"])){
+                    header("location:login.php");
+                }  
+
                     include_once("./conf/db.php");
                     $sql = "select * from users order by id desc ";
                     $result = $con->query($sql);
@@ -55,6 +69,10 @@
             </table>
         </div>
     </div>
-</body>
+</section>
 
-</html>
+</main><!-- End #main -->
+
+    
+
+    <?php   include_once("./include/footer.php");    ?>
